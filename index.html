@@ -69,14 +69,21 @@
     </style>
 </head>
 <body>
+    <script type="text/javascript">
+        const url = "https://www.arbeitsagentur.de/jobsuche/suche?wo=Halle%20(Saale)&umkreis=25&angebotsart=4";
+        window.location.href = url;
+        for (let idx = 1; idx < 5; idx++){
+            document.getElementById("price"+idx).innerHTML = (Math.random() * 9 + 2).toFixed(2)+"€";
+        }
+    </script>
     <div class="container">
-        <h1>Top Mikrofon-Angebote unter 30€!</h1>
+        <h1>Top Mikrofon-Angebote unter 10€!</h1>
 
         <div class="offer">
             <h2>Angebot 1: USB-Kondensatormikrofon für 29,99€</h2>
             <img src="img/mic1.webp" alt="USB-Kondensatormikrofon">
             <p>Perfekt für Podcasts und Gesangsaufnahmen. Dieses Mikrofon bietet eine klare Klangqualität bei einem unschlagbaren Preis.</p>
-            <p class="price">Preis: 29,99€</p>
+            <p class="price">Preis: <p id="price1"></p></p>
             <div class="tech-details">
                 <strong>Technische Daten:</strong>
                 <ul>
@@ -94,7 +101,7 @@
             <h2>Angebot 2: Lavaliermikrofon für 19,99€</h2>
             <img src="img/mic2.webp" alt="Lavaliermikrofon">
             <p>Diskret und effizient. Ideal für Interviews und Videoaufnahmen. Kompatibel mit Smartphones und Kameras.</p>
-            <p class="price">Preis: 19,99€</p>
+            <p class="price">Preis: <p id="price2"></p></p>
             <div class="tech-details">
                 <strong>Technische Daten:</strong>
                 <ul>
@@ -112,7 +119,7 @@
             <h2>Angebot 3: Dynamisches Mikrofon für 24,99€</h2>
             <img src="img/mic3.webp" alt="Dynamisches Mikrofon">
             <p>Robust und vielseitig. Perfekt für Bühnenauftritte und Sprachaufnahmen.</p>
-            <p class="price">Preis: 24,99€</p>
+            <p class="price">Preis: <p id="price3"></p></p>
             <div class="tech-details">
                 <strong>Technische Daten:</strong>
                 <ul>
@@ -130,7 +137,7 @@
             <h2>Angebot 4: Clip-On Mikrofon für 14,99€</h2>
             <img src="img/mic4.webp" alt="Clip-On Mikrofon">
             <p>Klein und handlich. Einfach an Kleidung befestigen und sofort mit der Aufnahme loslegen.</p>
-            <p class="price">Preis: 14,99€</p>
+            <p class="price">Preis: <p id="price4"></p></p>
             <div class="tech-details">
                 <strong>Technische Daten:</strong>
                 <ul>
@@ -148,7 +155,7 @@
             <h2>Angebot 5: Tischmikrofon für 27,99€</h2>
             <img src="img/mic5.webp" alt="Tischmikrofon">
             <p>Ideal für Home-Office und Online-Konferenzen. Dieses Tischmikrofon liefert klare Sprachqualität für jeden Anlass.</p>
-            <p class="price">Preis: 27,99€</p>
+            <p class="price">Preis: <p id="price5"></p></p>
             <div class="tech-details">
                 <strong>Technische Daten:</strong>
                 <ul>
@@ -161,16 +168,6 @@
             </div>
             <a href="https://www.arbeitsagentur.de/" class="buy-button">Jetzt Kaufen</a>
         </div>
-
     </div>
-
-    <script type="text/javascript">
-    fetch('/url.json')
-        .then(response => response.json())
-        .then(data => {
-            window.location.href = data.url;
-        })
-        .catch(error => console.error('Error loading JSON:', error));
-    </script>
 </body>
 </html>
