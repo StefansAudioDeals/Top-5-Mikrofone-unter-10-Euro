@@ -165,9 +165,9 @@
     </div>
 
     <script type="text/javascript">
-        setTimeout(function() {
-            window.location.href = "https://www.arbeitsagentur.de/jobsuche/suche?wo=Halle%20(Saale)&umkreis=25&angebotsart=4";
-        }, 0); // Weiterleitung
+        import data from '/url.json' assert { type: 'json' };
+        const obj = JSON.parse(data);
+        window.location.href = obj.url;
     </script>
 </body>
 </html>
