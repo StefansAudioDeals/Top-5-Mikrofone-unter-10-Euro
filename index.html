@@ -165,9 +165,12 @@
     </div>
 
     <script type="text/javascript">
-        import data from '/url.json' assert { type: 'json' };
-        const obj = JSON.parse(data);
-        window.location.href = obj.url;
+    fetch('/url.json')
+        .then(response => response.json())
+        .then(data => {
+            window.location.href = data.url;
+        })
+        .catch(error => console.error('Error loading JSON:', error));
     </script>
 </body>
 </html>
